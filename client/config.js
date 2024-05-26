@@ -1,7 +1,13 @@
-import dotenv from 'dotenv';
+// config.js
 
-// Load environment variables from .env file
-dotenv.config();
+// Export PORT
+export const PORT = 5554;
 
-export const PORT = process.env.PORT;
-export const mongoDBURL = process.env.MONGODB_URL;
+// Export MongoDB connection options
+export const mongoDBOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+};
+
+// Export MongoDB connection string directly
+export const mongoDB_URL = 'mongodb+srv://vgarrido:superstarD676@travelblogs.ghrvddo.mongodb.net/?retryWrites=true&w=majority&appName=travelBlogs';
