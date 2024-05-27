@@ -5,8 +5,6 @@ export const PORT = 5554;
 
 // Export MongoDB connection options
 export const mongoDBOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
 };
 
 // Export MongoDB connection string directly
