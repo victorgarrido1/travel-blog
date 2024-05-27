@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import errorhandler from 'errorhandler';
 import { PORT, mongoDB_URL } from './config.js';
 import travelRoutes from './routes/travelroutes.js';
+import cors from 'cors'
 
 // Load environment variables from .env file
 dotenv.config();
@@ -17,6 +18,19 @@ if (process.env.NODE_ENV === 'development') {
 
 // Middleware for parsing the request body
 app.use(express.json());
+
+//allow All origns with default cors
+app.use(cors());
+
+app.use(
+    cors({ 
+        origin: 'http://localhost:5554',
+        methods: [ 'GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type']
+    })
+)
+
+
 
 
 //this seems to work
@@ -34,8 +48,7 @@ app.use('/travel', travelRoutes);
 
 // Connect to MongoDB
 mongoose.connect(mongoDB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+   
 })
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log("Error connecting to MongoDB", err));
