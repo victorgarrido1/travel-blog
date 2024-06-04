@@ -35,46 +35,48 @@ const Home = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <table className="w-full border-separate border-spacing-2">
-          <thead>
-            <tr>
-              <th className="border border-slate-600 rounded-md">Some text</th>
-              <th className="border border-slate-600 rounded-md">Title</th>
-              <th className="border border-slate-600 rounded-md max-md:hidden">Person Name</th>
-              <th className="border border-slate-600 rounded-md max-md:hidden">Location Year</th>
-              <th className="border border-slate-600 rounded-md max-md:hidden">Operations</th>
-            </tr>
-          </thead>
-          <tbody>
-            {locations.map((location, index) => (
-              <tr key={location._id} className="h-8">
-                <td className="border border-slate-700 rounded-md text-center">
-                  {index + 1}
-                </td>
-                <td className="border border-slate-700 rounded-md text-center">
-                  {location.title}
-                </td>
-                <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-                  {location.personName}
-                </td>
-                <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-                  {location.year}
-                </td>
-                <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-                  <Link to={`/edit/${location._id}`} className="mr-2">
-                    <AiOutlineEdit className="text-yellow-500 text-2xl" />
-                  </Link>
-                  <Link to={`/details/${location._id}`} className="mr-2">
-                    <BsInfoCircle className="text-blue-500 text-2xl" />
-                  </Link>
-                  <Link to={`/delete/${location._id}`} className="mr-2">
-                    <MdOutlineDelete className="text-red-500 text-2xl" />
-                  </Link>
-                </td>
+        <div>
+          <table className="w-full border-separate border-spacing-2">
+            <thead>
+              <tr>
+                <th className="border border-slate-600 rounded-md">Index</th>
+                <th className="border border-slate-600 rounded-md">Location Name</th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">Location Summary</th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">Space Room Info</th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">Operations</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {locations.map((location, index) => (
+                <tr key={location._id} className="h-8">
+                  <td className="border border-slate-700 rounded-md text-center">
+                    {index + 1}
+                  </td>
+                  <td className="border border-slate-700 rounded-md text-center">
+                    {location.name}
+                  </td>
+                  <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+                    {location.summary}
+                  </td>
+                  <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+                    {location.spaceRoomInfo}
+                  </td>
+                  <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+                    <Link to={`/edit/${location._id}`} className="mr-2">
+                      <AiOutlineEdit className="text-yellow-500 text-2xl" />
+                    </Link>
+                    <Link to={`/details/${location._id}`} className="mr-2">
+                      <BsInfoCircle className="text-blue-500 text-2xl" />
+                    </Link>
+                    <Link to={`/delete/${location._id}`} className="mr-2">
+                      <MdOutlineDelete className="text-red-500 text-2xl" />
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
