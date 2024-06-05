@@ -47,7 +47,11 @@ const EditLocation = () => {
 
     setLoading(true);
     axios
-      .post(`http://localhost:5554/travel/${id}`)
+      .put(`http://localhost:5554/travel/${id}`, data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
       .then(() => {
         setLoading(false);
         navigate("/");
