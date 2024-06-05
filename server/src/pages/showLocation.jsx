@@ -37,8 +37,12 @@ const ShowLocation = () => {
           <span>{location.name}</span>
         </div>
         <div className='my-4'>
-          <span className='text-xl mr-4 text-grey-500'>Title: </span>
-          <span>{location.title}</span>
+          <span className='text-xl mr-4 text-grey-500'>Description: </span>
+          <span>{location.spaceRoomInfo}</span>
+        </div>
+        <div className='my-4'>
+          <span className='text-xl mr-4 text-grey-500'>House Hold Rules: </span>
+          <span>{location.locationRules}</span>
         </div>
         <div className='my-4'>
           <span className='text-xl mr-4 text-grey-500'>Summary: </span>

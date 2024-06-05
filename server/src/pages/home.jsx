@@ -28,7 +28,7 @@ const Home = () => {
     <div className="p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl my-8">Locations List</h1>
-        <Link to="locations/create">
+        <Link to="/travel/create">
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
         </Link>
       </div>
@@ -62,13 +62,13 @@ const Home = () => {
                     {location.spaceRoomInfo}
                   </td>
                   <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-                    <Link to={`/edit/${location._id}`} className="mr-2">
+                  <Link to={`/travel/edit/${location._id}`} className="mr-2">
                       <AiOutlineEdit className="text-yellow-500 text-2xl" />
                     </Link>
-                    <Link to={`/details/${location._id}`} className="mr-2">
+                    <Link to={`/travel/details/${location._id}`} className="mr-2">
                       <BsInfoCircle className="text-blue-500 text-2xl" />
                     </Link>
-                    <Link to={`/delete/${location._id}`} className="mr-2">
+                    <Link to={`/travel/delete/${location._id}`} className="mr-2">
                       <MdOutlineDelete className="text-red-500 text-2xl" />
                     </Link>
                   </td>
