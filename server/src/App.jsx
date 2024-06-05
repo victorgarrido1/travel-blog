@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import ShowLocation from './pages/showLocation';
 import CreateLocation from './pages/createLocation';
-import EditLocation from './pages/editLocation';
-import DeleteLocation from './pages/deleteLocation';
+import EditLocation from './pages/editLocation';  //to switch to delete 
+import DeleteLocation from './pages/deleteLocation'; // and here wil can switch to edit?
 
 class App extends Component {
   render() {

@@ -64,27 +64,27 @@ const locationSchema = new mongoose.Schema({
   address: {
     street: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     },
     city: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     },
     state: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     },
     country: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     },
     zipCode: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     }
   },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Spinner from "../components/spinner";
+import Spinner from "../componets/spinner";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
@@ -40,10 +40,18 @@ const Home = () => {
             <thead>
               <tr>
                 <th className="border border-slate-600 rounded-md">Index</th>
-                <th className="border border-slate-600 rounded-md">Location Name</th>
-                <th className="border border-slate-600 rounded-md max-md:hidden">Location Summary</th>
-                <th className="border border-slate-600 rounded-md max-md:hidden">Space Room Info</th>
-                <th className="border border-slate-600 rounded-md max-md:hidden">Operations</th>
+                <th className="border border-slate-600 rounded-md">
+                  Location Name
+                </th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">
+                  Location Summary
+                </th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">
+                  Space Room Info
+                </th>
+                <th className="border border-slate-600 rounded-md max-md:hidden">
+                  Operations
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -62,13 +70,19 @@ const Home = () => {
                     {location.spaceRoomInfo}
                   </td>
                   <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-                  <Link to={`/travel/edit/${location._id}`} className="mr-2">
+                    <Link to={`/travel/edit/${location._id}`} className="mr-2">
                       <AiOutlineEdit className="text-yellow-500 text-2xl" />
                     </Link>
-                    <Link to={`/travel/details/${location._id}`} className="mr-2">
+                    <Link
+                      to={`/travel/details/${location._id}`}
+                      className="mr-2"
+                    >
                       <BsInfoCircle className="text-blue-500 text-2xl" />
                     </Link>
-                    <Link to={`/travel/delete/${location._id}`} className="mr-2">
+                    <Link
+                      to={`/travel/delete/${location._id}`}
+                      className="mr-2"
+                    >
                       <MdOutlineDelete className="text-red-500 text-2xl" />
                     </Link>
                   </td>
