@@ -25,8 +25,8 @@ cd travel-blog
 
 ```
 
-## Install Dependenices
-Install the required dependenices using your package manager. If you are using npm  run:
+## Install Dependencies
+Install the required dependencies using your package manager. If you are using npm  run:
 
 ```
 npm install
@@ -51,7 +51,7 @@ npm start
 
 
 
-## Technologlies Used
+## Technologies Used
 * React
 * Node.JS
 * HTML 5
