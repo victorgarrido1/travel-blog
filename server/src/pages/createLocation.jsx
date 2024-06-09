@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../componets/backbutton";
 import Spinner from "../componets/spinner"; // Assuming Spinner is a custom component
+import { useSnackbar } from 'notistack';
 
 const CreateLocation = () => {
   const [name, setName] = useState ("");
@@ -12,6 +13,7 @@ const CreateLocation = () => {
   const [locationType, setLocationType] = useState("");
   const [spaceRoomInfo, setSpaceRoomInfo] = useState("");
   const [loading, setLoading] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
   
 
@@ -32,11 +34,12 @@ const CreateLocation = () => {
       .post("http://localhost:5554/travel/add", data)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Location Created Successfully ", {variant: 'Success' });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        alert("An error occurred, please check the console");
+        enqueueSnackbar('Error', { variant: 'Error' });
         console.error(err);
       });
   };

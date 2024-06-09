@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../componets/backbutton";
 import Spinner from "../componets/spinner"; // Assuming Spinner is a custom component
+import { enqueueSnackbar, useSnackbar } from "notistack";
+
 
 const EditLocation = () => {
   const [name, setName] = useState(""); // Ensure this is initialized
@@ -54,11 +56,12 @@ const EditLocation = () => {
       })
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Edit has been saved", { variant: "success" });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        alert("An error occurred, please check the console");
+        enqueueSnackbar('Error', {variant: 'Error' });
         console.error(err);
       });
   };
