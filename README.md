@@ -6,6 +6,11 @@
  
  This application allows you to see blog content across many multiple users and you can be able view travel locations routes and see user generated content relating to a particular location post based on the users submissions. This application is great to be able to share many options similar to viewing options such like as in a simple blog site.
 
+
+## Screenshot of the application
+![travel_blog_ver1](https://github.com/victorgarrido1/travel-blog/assets/139294878/122d7138-b042-4715-91ce-c21a90bd7eee)
+
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
@@ -72,6 +77,5 @@ With this project, I would like to share my fair share of personal struggles. Us
 
 ### Questions
 
-Here is the corrected version of your text:
 
 If you have any questions relating to this project, please reach out to me here or via email at: vgarrido009@gmail.com
