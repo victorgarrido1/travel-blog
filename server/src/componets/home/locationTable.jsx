@@ -13,7 +13,7 @@ const LocationTable = ({ locations }) => {
           <th className="border border-slate-600 rounded-md">Index</th>
           <th className="border border-slate-600 rounded-md">Location Name</th>
           <th className="border border-slate-600 rounded-md max-md:hidden">
-            Location Summary
+            Location Summary 
           </th>
           <th className="border border-slate-600 rounded-md max-md:hidden">
             Space Room Info
