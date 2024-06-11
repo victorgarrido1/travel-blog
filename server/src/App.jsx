@@ -6,6 +6,7 @@ import CreateLocation from './pages/createLocation';
 import EditLocation from './pages/editLocation';
 import DeleteLocation from './pages/deleteLocation';
 import Footer from './componets/home/footer'; // Corrected the spelling to 'components'
+import FabComponent from './componets/fabComponet';
 import { Fab, Action } from 'react-tiny-fab';
 import 'react-tiny-fab/dist/styles.css';
 
@@ -28,29 +29,9 @@ class App extends Component {
             <Route path="/travel/delete/:id" element={<DeleteLocation />} />
             {/* Add more Route components for other paths if needed */}
           </Routes>
-            {/* Floating Action Button */}
-        {/* Floating Action Button */}
-        <Fab
-          mainButtonStyles={{ backgroundColor: 'blue' }}
-          icon={<i className="fas fa-plus"></i>}
-          alwaysShowTitle={true}
-        >
-          <Action
-            text="Add Location"
-            onClick={() => alert('Add Location clicked!')}
-            style={{ backgroundColor: 'red' }}
-          >
-            <i className="fas fa-map-marker-alt"></i>
-          </Action>
-          <Action
-            text="View Locations"
-            onClick={() => alert('View Locations clicked!')}
-            style={{ backgroundColor: 'green' }}
-          >
-            <i className="fas fa-eye"></i>
-          </Action>
-          {/* Add more actions as needed */}
-        </Fab>
+          
+          {/* Use the FAB component here */}
+          <FabComponent />
         </main>
         <Footer />
       </div>
