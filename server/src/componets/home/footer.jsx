@@ -4,45 +4,45 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-k
 const Footer = () => {
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      {/* Social Media Section */}
-
-
-      <section className='flex justify-between text-lg start items-center p-4 border-b'>
-        <div className='text-left'>
+      <section className='flex flex-col md:flex-row justify-between items-center p-4 border-b'>
+      <div className='text-left md:ml-10 mb-4 md:mb-0'>
           <span>
             Get connected with us on social networks:
           </span>
         </div>
 
-        <div className='d-flex justify-content-end'>
-          <a href='https://www.facebook.com' className='me-4 text-reset'>
+
+        <div className='flex justify-end md:justify-end'>
+          <a href='https://www.facebook.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="facebook-f" />
           </a>
-          <a href='https://www.twitter.com' className='me-4 text-reset'>
+          <a href='https://www.twitter.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="twitter" />
           </a>
-          <a href='https://www.google.com' className='me-4 text-reset'>
+          <a href='https://www.google.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="google" />
           </a>
-          <a href='https://www.instagram.com' className='me-4 text-reset'>
+          <a href='https://www.instagram.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="instagram" />
           </a>
-          <a href='https://www.linkedin.com' className='me-4 text-reset'>
+          <a href='https://www.linkedin.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="linkedin" />
           </a>
-          <a href='https://www.github.com' className='me-4 text-reset'>
+          <a href='https://www.github.com' className='ml-4 md:ml-4 text-reset'>
             <MDBIcon fab icon="github" />
           </a>
         </div>
       </section>
 
+
       {/* Footer Links Section */}
-      <section className=''>
-        <MDBContainer className='text-center text-md-start mt-5'>
-          <MDBRow className='mt-3'>
-            <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-              <h6 className='uppercase fw-bold mb-4'>
-                <MDBIcon icon="gem" className="me-3" />
+      <section className='p-4 border-b'>
+        <MDBContainer className='text-center md:text-left mt-5'>
+          <MDBRow className='flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-6'>
+            {/* Company Info Section */}
+            <MDBCol className='mb-4 md:mb-0 text-left'>
+              <h6 className='uppercase font-bold mb-4'>
+                <MDBIcon icon="gem" className="mr-2" />
                 Company name
               </h6>
               <p>
@@ -51,8 +51,10 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='uppercase fw-bold mb-4'>Products</h6>
+
+            <MDBCol className='mb-4 md:mb-0 text-left'>
+              <h6 className='uppercase font-bold mb-4'>Products</h6>
+
               <p>
                 <a href='#!' className='text-reset'>
                   Angular
@@ -75,8 +77,9 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='uppercase fw-bold mb-4'>Useful links</h6>
+            {/*Useful links Section  */}
+            <MDBCol className='mb-4 md:mb-0 text-left'>
+              <h6 className='uppercase font-bold mb-4'>Useful links</h6>
               <p>
                 <a href='#!' className='text-reset'>
                   Pricing
@@ -99,21 +102,23 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-              <h6 className='uppercase fw-bold mb-4'>Contact</h6>
+
+            {/* Contact section will go here! */}
+            <MDBCol className='mb-4 text-left'>
+              <h6 className='uppercase font-bold mb-4'>Contact</h6>
               <p>
-                <MDBIcon icon="home" className="me-2" />
+                <MDBIcon icon="home" className="mr-2" />
                 New York, NY 10012, US
               </p>
               <p>
-                <MDBIcon icon="envelope" className="me-3" />
+                <MDBIcon icon="envelope" className="mr-3" />
                 info@example.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="mr-3" /> + 01 234 567 88
               </p>
               <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                <MDBIcon icon="print" className="mr-3" /> + 01 234 567 89
               </p>
             </MDBCol>
           </MDBRow>
