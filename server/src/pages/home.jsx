@@ -1,14 +1,14 @@
 // Importing necessary modules and components from React, axios, and other libraries
 import React, { useEffect, useState } from "react";
 import axios from "axios"; // For making HTTP requests
-import Spinner from "../componets/spinner"; // A spinner component for loading state
+import Spinner from "../components/spinner"; // A spinner component for loading state
 import { Link } from "react-router-dom"; // For navigation links
 import { AiOutlineEdit } from "react-icons/ai"; // Edit icon from react-icons library
 import { BsInfoCircle } from "react-icons/bs"; // Info circle icon from react-icons library
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md"; // Add and Delete icons from react-icons library
-import LocationTable from "../componets/home/locationTable"; // Component to display locations in a table format
-import LocationCard from "../componets/home/locationCard"; // Component to display locations in a card format
-import Footer from "../componets/home/footer"; // to put in the bottom (:
+import LocationTable from "../components/home/locationTable"; // Component to display locations in a table format
+import LocationCard from "../components/home/locationCard"; // Component to display locations in a card format
+import Footer from "../components/home/footer"; // to put in the bottom (:
 
 
 const Home = () => {

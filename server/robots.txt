@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /useless_file.html
+Disallow: /junk/other_useless_file.html

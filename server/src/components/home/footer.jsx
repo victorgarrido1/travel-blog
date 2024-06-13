@@ -54,8 +54,8 @@ const Footer = () => {
             <MDBCol className="mb-4 md:mb-0 text-left">
               <h6 className="uppercase font-bold mb-4">
                 <MDBIcon icon="gem" className="mr-2" />
-                Company name
-              </h6>
+                Travel Lit Lounge
+                </h6>
               <p>
                 Your one stop shop to be able to share your recent locations and
                 be able to find exciting destinations for future travels. We are
@@ -142,7 +142,7 @@ const Footer = () => {
       >
         © 2024 Copyright
         <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          LoveLace Location Services LLC
+          Travel Lit Lounge LLC
         </a>
       </div>
     </MDBFooter>

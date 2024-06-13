@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import BackButton from "../componets/backbutton";
-import Spinner from "../componets/spinner"; // Assuming Spinner is a custom component
+import BackButton from "../components/backbutton";
+import Spinner from "../components/spinner"; // Assuming Spinner is a custom component
 import { enqueueSnackbar, useSnackbar } from "notistack";
 
 

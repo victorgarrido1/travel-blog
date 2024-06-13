@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import BackButton from "../componets/backbutton"; // Ensure the correct import based on your export
-import Spinner from "../componets/spinner"; // Ensure the correct import based on your export
+import BackButton from "../components/backbutton"; // Ensure the correct import based on your export
+import Spinner from "../components/spinner"; // Ensure the correct import based on your export
 
 const ShowLocation = () => {
   const [location, setLocation] = useState({});
