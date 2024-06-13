@@ -12,6 +12,8 @@ import FabComponent from './components/fabComponet';
 import 'react-tiny-fab/dist/styles.css';
 import 'mdb-react-ui-kit';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './fonts.css'; // Import the custom font
+
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -32,8 +34,8 @@ const App = () => {
   return (
     <div className={`flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white`}>
       <header className="p-4 flex justify-between items-center">
-        <h1 className="text-2xl">Travel Lit Lounge</h1>
-        <button 
+      <h1 className="text-3xl" style={{ fontFamily: 'Josefin Sans, sans-serif' }}>Travel Lit Lounge</h1>
+      <button 
           onClick={toggleTheme} 
           className="bg-gray-200 dark:bg-gray-800 text-black dark:text-white p-2 rounded flex items-center justify-center"
         >

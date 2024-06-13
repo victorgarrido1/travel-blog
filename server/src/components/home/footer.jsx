@@ -52,10 +52,10 @@ const Footer = () => {
           <MDBRow className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-6">
             {/* Company Info Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-              <h6 className="uppercase font-bold mb-4">
-                <MDBIcon icon="gem" className="mr-2" />
-                Travel Lit Lounge
-                </h6>
+            <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300 flex items-center">
+    <MDBIcon icon="gem" className="mr-2 text-blue-900 dark:text-blue-300" />
+    Travel Lit Lounge
+  </h6>
               <p>
                 Your one stop shop to be able to share your recent locations and
                 be able to find exciting destinations for future travels. We are
@@ -65,33 +65,37 @@ const Footer = () => {
             </MDBCol>
 
             <MDBCol className="mb-4 md:mb-0 text-left">
-              <h6 className="uppercase font-bold mb-4">Products</h6>
+            <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
+            Products
+              </h6>
 
               <p>
-                <a href="#!" className="text-reset">
-                Location PH #4
+                <a href="#!" className="text-reset ">
+                  Vacation Packages
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                Location PH #4
+                  Location Attractions
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                Location PH #4
+                  Clothing
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Location PH #4
+                  Books
                 </a>
               </p>
             </MDBCol>
 
             {/*Useful links Section  */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-              <h6 className="uppercase font-bold mb-4">Useful links</h6>
+              <h6 className="uppercase font-bold mb-4 text-blue-900	dark:text-blue-300">
+                Useful links
+              </h6>
               <p>
                 <a href="#!" className="text-reset">
                   Pricing
@@ -116,7 +120,9 @@ const Footer = () => {
 
             {/* Contact section will go here! */}
             <MDBCol className="mb-4 text-left">
-              <h6 className="uppercase font-bold mb-4">Contact</h6>
+              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300	">
+                Contact
+              </h6>
               <p>
                 <MDBIcon icon="home" className="mr-2" />
                 New York, NY 10012, US
