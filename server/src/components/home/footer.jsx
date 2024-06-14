@@ -70,7 +70,7 @@ const Footer = () => {
               </h6>
 
               <p>
-                <a href="#!" className="text-reset ">
+                <a href="/travel/vacation-packages" className="text-reset">
                   Vacation Packages
                 </a>
               </p>

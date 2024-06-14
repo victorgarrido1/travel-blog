@@ -13,6 +13,7 @@ import 'react-tiny-fab/dist/styles.css';
 import 'mdb-react-ui-kit';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './fonts.css'; // Import the custom font
+import VacationPackages from './pages/vacationPackages';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/travel/details/:id" element={<ShowLocation />} />
           <Route path="/travel/edit/:id" element={<EditLocation />} />
           <Route path="/travel/delete/:id" element={<DeleteLocation />} />
+          <Route path='/travel/vacation-packages' element={<VacationPackages />} /> 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
