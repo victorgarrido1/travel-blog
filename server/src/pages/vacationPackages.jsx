@@ -1,7 +1,8 @@
 import React from "react";
 import { Helmet } from 'react-helmet';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome is imported
-import Accordion from "../components/accoridon";
+import ExtraAccordion from "../components/extraAccoridon";
+import FlightAccordion from "../components/flightAccordidon";
 
 
 const VacationPackages = () => {
@@ -207,7 +208,8 @@ const VacationPackages = () => {
           <span role="button"></span>
 
         </div>
-        <Accordion />
+        <ExtraAccordion />
+        <FlightAccordion />
       </div>
     </div>
 
