@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome is imported
 import ExtraAccordion from "../components/extraAccoridon";
 import FlightAccordion from "../components/flightAccordidon";
+import Tahiti from "../components/tahitiNuiAccordion";
 
 
 const VacationPackages = () => {
@@ -210,6 +211,7 @@ const VacationPackages = () => {
         </div>
         <ExtraAccordion />
         <FlightAccordion />
+        <Tahiti />
       </div>
     </div>
 

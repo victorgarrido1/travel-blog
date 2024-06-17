@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const VacationAccordion = ({ title = "Included Extras", children }) => {
+const VacationAccordion = ({ title = "Vacation Includes", children }) => {
     const [isVisible, setIsVisible] = useState(false);
   
     const toggleListVisibility = () => {
@@ -26,15 +26,23 @@ const VacationAccordion = ({ title = "Included Extras", children }) => {
                 <ul className="text-gray-800 dark:text-light-text mt-5 space-y-3">
                     <li className="flex items-center">
                         <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
-                        Five nights for the price of three (reflected in price, valid for travel 11/1/24-12/19/24 and 1/4/25 - 3/31/25)
+                       Round-trip economy class airfare from Los Angeles on Air Tahiti Nui
                     </li>
                     <li className="flex items-center">
                         <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
-                        Daily buffet breakfast
+                        Round-trip inter-island airfare on Air Tahiti
                     </li>
                     <li className="flex items-center">
                         <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
-                        Unlimited internet access
+                        Transportation to and from hotel
+                    </li>
+                    <li className="flex items-center">
+                        <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
+                        Five nights in a Lagoon-View OverWater Bungalow
+                    </li>
+                    <li className="flex items-center">
+                        <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
+                        Airfare and hotel taxes
                     </li>
                 </ul>
             </div>
