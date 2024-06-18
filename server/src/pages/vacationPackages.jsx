@@ -1,9 +1,10 @@
 import React from "react";
 import { Helmet } from 'react-helmet';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome is imported
-import ExtraAccordion from "../components/extraAccoridon";
-import FlightAccordion from "../components/flightAccordidon";
-import Tahiti from "../components/tahitiNuiAccordion";
+import ExtraAccordion from "../components/home/vacationComponents/extraAccoridon";
+import FlightAccordion from "../components/home/vacationComponents/flightAccordidon";
+import Tahiti from "../components/home/vacationComponents/tahitiNuiAccordion";
+import AccommodationCard from "../components/home/vacationComponents/vacationAccommodations";
 
 
 const VacationPackages = () => {
@@ -223,6 +224,7 @@ const VacationPackages = () => {
     <div className="shadow-md">
         <Tahiti />
     </div>
+<    AccommodationCard />
 </div>
 
       </div>
