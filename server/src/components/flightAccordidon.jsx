@@ -8,7 +8,7 @@ const VacationAccordion = ({ title = "Vacation Includes", children }) => {
     };
   
     return (
-        <div className="max-w-xl bg-neutral-200 p-10 rounded-lg overflow-hidden">
+        <div className="w-full bg-neutral-200 p-10 rounded-lg overflow-hidden">
             <button
                 className="bg-transparent font-bold text-gray-800 dark:text-light-text flex justify-between items-center w-full transition duration-300 ease-in-out"
                 onClick={toggleListVisibility}

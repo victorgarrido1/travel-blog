@@ -189,9 +189,13 @@ const VacationPackages = () => {
       Check Price & Availability
      </button>
   </div>
-  <div className="flex-1">
-    <img src="path_image" alt="vacation" />
-  </div>
+  <div className="max-w-xs mx-auto p-4 bg-gray-100 rounded-lg">
+      <img
+        src=""
+        alt="vacation_placeholder"
+        className="w-full h-auto object-cover"
+      />
+    </div>
 
 
 
@@ -209,9 +213,18 @@ const VacationPackages = () => {
           <span role="button"></span>
 
         </div>
+        <div className="space-y-4">
+    <div className="shadow-md">
         <ExtraAccordion />
+    </div>
+    <div className="shadow-md">
         <FlightAccordion />
+    </div>
+    <div className="shadow-md">
         <Tahiti />
+    </div>
+</div>
+
       </div>
     </div>
 
