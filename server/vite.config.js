@@ -1,7 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+// Define global object
 export default defineConfig({
   plugins: [react()],
-})
+  define: {
+    global: 'window', // this will define global as window in browser
+  },
+});
