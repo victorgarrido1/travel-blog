@@ -5,6 +5,7 @@ import ExtraAccordion from "../components/home/vacationComponents/extraAccoridon
 import FlightAccordion from "../components/home/vacationComponents/flightAccordidon";
 import Tahiti from "../components/home/vacationComponents/tahitiNuiAccordion";
 import AccommodationCard from "../components/home/vacationComponents/vacationAccommodations";
+import DateAndPricesGrid from "../components/home/vacationComponents/datePricesVacation";
 
 
 const VacationPackages = () => {
@@ -226,6 +227,7 @@ const VacationPackages = () => {
     </div>
 <    AccommodationCard />
 </div>
+    <DateAndPricesGrid />
 
       </div>
     </div>
