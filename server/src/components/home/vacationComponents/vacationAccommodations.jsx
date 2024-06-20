@@ -19,7 +19,7 @@ const AccommodationCard = () => {
     <h1 className="text-3xl font-semibold text-gray-800 my-6">
       Accommodations
     </h1>
-    <div className="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+    <div className="w-full mx-auto dark:bg-neutral-800 p-5 bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
       <img
         src={resortDetails.imageURL}
         alt={resortDetails.title}

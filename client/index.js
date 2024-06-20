@@ -2,10 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import errorhandler from 'errorhandler';
+import cors from 'cors';
 import { PORT, mongoDB_URL } from './config.js';
 import travelRoutes from './routes/travelroutes.js';
-import cors from 'cors';
-
 
 // Load environment variables from .env file
 dotenv.config();
@@ -17,32 +16,34 @@ if (process.env.NODE_ENV === 'development') {
     app.use(errorhandler());
 }
 
-// Middleware for parsing the request body
+// Middleware for parsing the request body as JSON
 app.use(express.json());
 
-// Allow all origins with default CORS
+// Allow all origins with default CORS settings
 app.use(cors());
 
-// Use the travel routes with the /travel prefix
-app.use('/api', travelRoutes);
+// You can configure CORS more specifically if needed
+/*
+app.use(cors({ 
+    origin: 'http://localhost:5554',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
+*/
 
-// Sample route to check if the server is running 
+// Sample route to check if the server is running
 app.get('/', (req, res) => {
-    console.log("Hello!!!!");
-    // Logging specific properties of the request object
-    console.log(`GET request received at ${req.url}`);
-    // Sending a simple response
-    return res.status(200).send("Welcome to the Stack of WorkPlace");
+    console.log("Received GET request at /");
+    res.status(200).send("Welcome to the Stack of WorkPlace");
 });
 
-
+// Use the travel routes with the /travel prefix
+app.use('/travel', travelRoutes);
 
 // Connect to MongoDB
-mongoose.connect(mongoDB_URL, {
-
-})
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.log("Error connecting to MongoDB", err));
+mongoose.connect(mongoDB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB connected successfully"))
+    .catch(err => console.log("Error connecting to MongoDB:", err));
 
 // Start the server
 app.listen(PORT, () => {

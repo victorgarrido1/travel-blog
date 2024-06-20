@@ -4,26 +4,26 @@ const ExtraAccordion = ({ title = "Included Extras", children }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleListVisibility = () => {
-    setIsVisible(!isVisible); // toggles the visibility state
+    setIsVisible(!isVisible); // Toggle the visibility state
   };
 
   return (
-    <div className="w-full bg-neutral-200 p-10 rounded-lg overflow-hidden">
+    <div className="w-full bg-neutral-200 dark:bg-neutral-800 p-10 rounded-lg overflow-hidden shadow-md">
       <button
-        className="bg-transparent font-bold text-gray-800 dark:text-light-text flex justify-between items-center w-full transition duration-300 ease-in-out"
+        className="bg-transparent font-bold text-gray-800 dark:text-gray-100 flex justify-between items-center w-full transition duration-300 ease-in-out"
         onClick={toggleListVisibility}
       >
         {title}
-        <i className={`fa-solid transition-transform duration-300 ease-in-out ${isVisible ? "fa-arrow-up" : "fa-arrow-down"}`}></i>
+        <i className={`fa-solid transition-transform duration-300 ease-in-out ${isVisible ? "fa-arrow-up" : "fa-arrow-down"} text-gray-800 dark:text-gray-100`}></i>
       </button>
-      <div 
+      <div
         style={{
-          maxHeight: isVisible ? '1000px' : '0', // adjust max height according to content
-          transition: 'max-height 0.4s ease-in-out'
+          maxHeight: isVisible ? "1000px" : "0", // Adjust max height according to content
+          transition: "max-height 0.4s ease-in-out",
         }}
         className="overflow-hidden"
       >
-        <ul className="text-gray-800 dark:text-light-text mt-5 space-y-3">
+        <ul className="text-gray-800 dark:text-gray-100 mt-5 space-y-3">
           {children || (
             <>
               <li className="flex items-center">
@@ -46,14 +46,13 @@ const ExtraAccordion = ({ title = "Included Extras", children }) => {
                 <i className="fa-solid fa-circle-check text-green-500 mr-2"></i> 
                 Welcome lei greeting
               </li>
-              <hr className="border-t-2 border-gray-300 w-11/12 mx-auto my-5"/>
-              <li className="flex  font-bold items-center">
-                <i className="fa-solid fa-circle-check text-green-500 mr-2"></i> 
+              <hr className="border-t-2 border-gray-300 dark:border-gray-600 w-11/12 mx-auto my-5" />
+              <li className="flex font-bold items-center">
                 Exclusive Member Benefit: Additional free amenities
               </li>
               <li className="flex items-center">
                 <i className="fa-solid fa-circle-check text-green-500 mr-2"></i> 
-                Exclusive Member receive an annual 2% Reward, up to $1,000 on qualified Travel Lit purchases
+                Exclusive members receive an annual 2% Reward, up to $1,000 on qualified Travel Lit purchases
               </li>
               <li className="flex items-center pl-5"> 
                 <i className="fa-solid fa-circle-check text-green-500 mr-2"></i>
