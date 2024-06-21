@@ -41,7 +41,7 @@ const AvailableDates = () => {
       </h2>
       <table className="w-full border-collapse border border-gray-200 dark:border-gray-600">
         <thead>
-          <tr className="bg-blue-600 dark:bg-blue-800 text-white dark:text-gray-100">
+          <tr className="bg-blue-600 dark:bg-blue-900 text-white dark:text-gray-100">
             <th className="p-4 border border-gray-300 dark:border-gray-700">
               Period
             </th>
@@ -76,7 +76,30 @@ const AvailableDates = () => {
                 {item.airport}
               </td>
               <td className="p-4 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100">
-                {item.price}
+                {/* Check if the price contains the word 'From' */}
+                {item.price.includes("From") ? (
+                  <>
+                    {/* Display 'From' in a smaller, grayer text above the price */}
+                    <span className="block text-sm text-gray-600 dark:text-gray-300">
+                      From
+                    </span>
+                    {/* Display the price without the 'From' part */}
+                    {/* The following code renders the price value when it includes 'From' in its string. 
+    - 'replace("From", "")' removes the 'From' text from the price string.
+    - 'trim()' removes any leading or trailing whitespace that may remain after the replacement.
+  */}
+                    {/* To understand this, in victors terms.. it searches, if it has the FROM text, it can be left, with the question mark, if there is no FROM, then it essentially will leave it blank */}
+
+                    <span className="block text-2xl text-blue-600 dark:text-blue-400">
+                      {item.price.replace("From", "").trim()}
+                    </span>
+                  </>
+                ) : (
+                  /* If 'From' is not included, just display the price directly */
+                  <span className="block text-2xl text-blue-600 dark:text-blue-400">
+                    {item.price}
+                  </span>
+                )}
               </td>
             </tr>
           ))}
@@ -89,23 +112,31 @@ const AvailableDates = () => {
         vary based on the selected travel dates.
       </p>
       <div className="rep-6">
-        <h2 className="text-2xl font-semibold mb-4 text-center text-gray-900 dark:text-gray-100">
-          Contact Us
-        </h2>
-        <div className="flex justify-end">
-        <button className="flex justify-center items-center mt-4 space-x-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-          <i className="fa-solid fa-phone text-xl text-red-600 dark:text-red-500"></i>
-          <span
-            className="text-xl text-white"
-            aria-label="Call to book phone number"
-          >
-            Call to Book 1-866-922-7925
-          </span>
-          
-        </button>
+ 
+        <div className="flex justify-end items-center">
+          {/* Button for mobile devices */}
+          <button className="flex md:hidden justify-center items-center space-x-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+            <i className="fa-solid fa-phone text-xl text-red-600 dark:text-red-500"></i>
+            <span
+              className="text-xl text-white py-2 px-2"
+              aria-label="Call to book phone number"
+            >
+              Call to Book 1-866-922-7925
+            </span>
+          </button>
+          {/* Text link for larger screens */}
+          <div className="hidden md:flex items-center space-x-2 py-3 px-1">
+            <i className="fa-solid fa-phone text-xl text-red-600 dark:text-red-500"></i>
+            <a
+              href="tel:1-866-922-7925"
+              className="text-xl text-blue-600 dark:text-blue-400"
+              aria-label="Call to book phone number"
+            >
+              Call to Book: 1-866-922-7925
+            </a>
+          </div>
         </div>
       </div>
-    
     </div>
   );
 };
