@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   MDBFooter,
   MDBContainer,
@@ -16,10 +17,7 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-end md:justify-end">
-          <a
-            href="https://www.facebook.com"
-            className="ml-4 md:ml-4 text-reset"
-          >
+          <a href="https://www.facebook.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="facebook-f" />
           </a>
           <a href="https://www.x.com" className="ml-4 md:ml-4 text-reset">
@@ -28,16 +26,10 @@ const Footer = () => {
           <a href="https://www.google.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="google" />
           </a>
-          <a
-            href="https://www.instagram.com"
-            className="ml-4 md:ml-4 text-reset"
-          >
+          <a href="https://www.instagram.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="instagram" />
           </a>
-          <a
-            href="https://www.linkedin.com"
-            className="ml-4 md:ml-4 text-reset"
-          >
+          <a href="https://www.linkedin.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="linkedin" />
           </a>
           <a href="https://www.github.com" className="ml-4 md:ml-4 text-reset">
@@ -52,32 +44,32 @@ const Footer = () => {
           <MDBRow className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-6">
             {/* Company Info Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-            <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300 flex items-center">
-    <MDBIcon icon="gem" className="mr-2 text-blue-900 dark:text-blue-300" />
-    Travel Lit Lounge
-  </h6>
+              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300 flex items-center">
+                <MDBIcon icon="gem" className="mr-2 text-blue-900 dark:text-blue-300" />
+                Travel Lit Lounge
+              </h6>
               <p>
-                Your one stop shop to be able to share your recent locations and
-                be able to find exciting destinations for future travels. We are
-                committed to provide great peace and tranquility while visiting
-                our site of user generated locations.
+                Your one-stop shop to be able to share your recent locations and
+                find exciting destinations for future travels. We are committed
+                to providing great peace and tranquility while visiting our site
+                of user-generated locations.
               </p>
             </MDBCol>
 
+            {/* Products Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-            <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
-            Products
+              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
+                Products
               </h6>
-
               <p>
-                <a href="/travel/vacation-packages" className="text-reset">
+                <Link to="/travel/vacation-packages" className="text-reset">
                   Vacation Packages
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <Link to="/travel/location-attractions" className="text-reset">
                   Location Attractions
-                </a>
+                </Link>
               </p>
               <p>
                 <a href="#!" className="text-reset">
@@ -91,9 +83,9 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            {/*Useful links Section  */}
+            {/* Useful Links Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-              <h6 className="uppercase font-bold mb-4 text-blue-900	dark:text-blue-300">
+              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
                 Useful links
               </h6>
               <p>
@@ -118,9 +110,9 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            {/* Contact section will go here! */}
+            {/* Contact Section */}
             <MDBCol className="mb-4 text-left">
-              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300	">
+              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
                 Contact
               </h6>
               <p>
@@ -142,10 +134,7 @@ const Footer = () => {
         </MDBContainer>
       </section>
 
-      <div
-        className="text-center p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-      >
+      <div className="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
         © 2024 Copyright
         <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
           Travel Lit Lounge LLC

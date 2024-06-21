@@ -9,11 +9,13 @@ import DeleteLocation from './pages/deleteLocation';
 import NotFound from './pages/notFound';
 import Footer from './components/home/footer';
 import FabComponent from './components/fabComponet';
+import VacationPackages from './pages/vacationPackages';
+import LocationAttractions from './components/home/vacationComponents/LocationAttraction';
+
 import 'react-tiny-fab/dist/styles.css';
 import 'mdb-react-ui-kit';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './fonts.css'; // Import the custom font
-import VacationPackages from './pages/vacationPackages';
 
 
 const App = () => {
@@ -51,6 +53,7 @@ const App = () => {
           <Route path="/travel/edit/:id" element={<EditLocation />} />
           <Route path="/travel/delete/:id" element={<DeleteLocation />} />
           <Route path='/travel/vacation-packages' element={<VacationPackages />} /> 
+          <Route path="/travel/location-attractions" element={<LocationAttractions />} /> 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
