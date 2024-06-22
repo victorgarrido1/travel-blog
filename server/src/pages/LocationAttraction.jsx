@@ -1,4 +1,31 @@
 import React from 'react';
+import AttractionCard from '../components/locationAttractionComponents/AttractionCard';
+import GridContainer from '../components/locationAttractionComponents/GridContainer';
+
+const locations = [
+  {
+    id: 1,
+    title: 'The Escape Game Houston (CityCentre)',
+    location: 'Memorial/Energy Corridor',
+    image: '/assets/images/escape-game-1.jpg', // Replace with actual image paths
+    link: '#',
+  },
+  {
+    id: 2,
+    title: 'The Escape Game Houston (Galleria)',
+    location: 'Galleria/Uptown',
+    image: '/assets/images/escape-game-2.jpg', // Replace with actual image paths
+    link: '#',
+  },
+  {
+    id: 3,
+    title: '14 Pews',
+    location: 'Houston Heights',
+    image: '/assets/images/14-pews.jpg', // Replace with actual image paths
+    link: '#',
+  },
+  // 
+]
 
 const LocationAttractions = () => {
   return (
@@ -48,6 +75,22 @@ const LocationAttractions = () => {
           treatments designed to relax and rejuvenate guests. The treatments incorporate indigenous ingredients and techniques.
         </p>
       </div>
+      {/* <new grid with the attraction cards /> */}
+      <div className="mt-8">
+        <GridContainer>
+          {locations.map((location) => (
+            <AttractionCard
+              key={location.id}
+              image={location.image}
+              title={location.title}
+              location={location.location}
+              link={location.link}
+            />
+          ))}
+        </GridContainer>
+
+      </div>
+      <AttractionCard />
     </div>
   );
 }
