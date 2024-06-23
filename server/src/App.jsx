@@ -11,6 +11,7 @@ import Footer from './components/home/footer';
 import FabComponent from './components/fabComponet';
 import VacationPackages from './pages/vacationPackages';
 import LocationAttractions from './pages/LocationAttraction';
+import ImageGallery from './components/ImageGallery';
 import 'react-tiny-fab/dist/styles.css';
 import 'mdb-react-ui-kit';
 import '@fortawesome/fontawesome-free/css/all.min.css';
