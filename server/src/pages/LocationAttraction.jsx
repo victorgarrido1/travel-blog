@@ -1,70 +1,47 @@
-// client/src/components/LocationAttractions.jsx
 import React from "react";
 import AttractionCard from "../components/locationAttractionComponents/AttractionCard";
 import GridContainer from "../components/locationAttractionComponents/GridContainer";
-import HorizontalImageBox from "../components/locationAttractionComponents/HorizonalImageBox";
+import HorizontalImageBox from "../components/locationAttractionComponents/HorizontalImageBox";
 import useFirebaseStorage from "../hooks/useFireBaseStorage";
 
-const locations = [
-  {
-    id: 1,
-    title: "The Escape Game Houston (CityCentre)",
-    location: "Memorial/Energy Corridor",
-    image: "/assets/images/escape-game-1.jpg",
-    link: "#",
-  },
-  // Other static location data...
-];
+// Array of titles for the last three images
+const HorizontalTitleImages = ["Things to Do", "Events This Weekend", "Free Things to Do"];
 
-const horizontalImages = [
-  {
-    id: 1,
-    title: "Things to Do",
-    image: "/assets/images/things-to-do.jpg",
-    link: "#",
-  },
-  // Other static horizontal image data...
-];
-
-// Mapping image URLs to custom names
+// Mapping image URLs to custom names (you can expand this as needed)
 const imageNameMapping = {
-  "Bora Travel/bora_01.jpg": "Beautiful Bora Beach",
-  "Bora Travel/bora_02.jpg": "Stunning Sunset",
-  "Bora Travel/bora_03.webp": "Crystal Clear Waters",
-  "Bora Travel/bora_04.jpg": "Luxurious Resort",
-  "Bora Travel/bora_05.jpg": "Tropical Paradise",
-  "Bora Travel/bora_06.jpg": "Serene Nature",
-  "Bora Travel/bora_people_01.jpg": "XXXX1",
-  "Bora Travel/bora_people_02.jpg": "XX2",
-  "Bora Travel/bora_people_03.jpg": "XXXHIHI",
-
+  "bora_01.jpg": "Beautiful Bora Beach",
+  "bora_02.jpg": "Stunning Sunset",
+  "bora_03.webp": "Crystal Clear Waters",
+  "bora_04.jpg": "Luxurious Resort",
+  "bora_05.jpg": "Tropical Paradise",
+  "bora_06.jpg": "Serene Nature",
+  "bora_people_01.jpg": "Explore Adventure",
+  "bora_people_02.jpg": "Local Culture",
+  "bora_people_03.jpg": "Island Life",
   // Add more mappings as needed
 };
 
-
-
-
 const LocationAttractions = () => {
-  // Use the custom hook to fetch images from Firebase Storage
   const firebaseImages = useFirebaseStorage("Bora Travel");
 
-  //define the paths for the "THINGS TO DO images"
+  // Extract and format the last three images from Firebase
+  const lastThreeFirebaseImages = firebaseImages.slice(-3).map((url, index) => {
+    const imagePath = decodeURIComponent(url.split("/").pop().split("?")[0]);
+    const imageName = HorizontalTitleImages[index] || `Image ${index + 1}`; // Assign titles from the HorizontalTitleImages array
 
-  const thingsToDoImagePaths = [
-    'bora_people_01.jpg',
-    'bora_people_02.jpg',
-    'bora_people_03.jpg'
-  ]
-
-
-
+    return {
+      id: index + 1,
+      title: imageName,
+      image: url,
+      link: "#",
+    };
+  });
 
   return (
     <div className="p-8 bg-gray-100 dark:bg-gray-800">
       <h1 className="text-4xl font-bold text-blue-900 dark:text-blue-300 p-4 mb-6">
         Location Attractions
       </h1>
-
 
       <div className="md:flex group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
         <div className="md:flex-shrink-0 overflow-hidden">
@@ -120,7 +97,6 @@ const LocationAttractions = () => {
         </p>
       </div>
 
-      {/* Grid layout to display fetched images as attraction cards */}
       <div className="mt-8">
         <GridContainer>
           {firebaseImages.map((url, index) => {
@@ -132,19 +108,20 @@ const LocationAttractions = () => {
 
             return (
               <AttractionCard
-                key={index} // Unique key for each card
-                image={url} // Image URL fetched from Firebase
-                title={imageName} // Use custom name
-                location="Bora Travel" // Placeholder location
-                link="#" // Placeholder link
+                key={index}
+                image={url}
+                title={imageName}
+                location="Bora Travel"
+                link="#"
               />
             );
           })}
         </GridContainer>
+      </div>
 
-
-        <div className="flex justify-between gap-4 mb-8">
-        {horizontalImages.map((item) => (
+      {/* Separate Section for Last Three Images */}
+      <div className="mt-8 flex justify-between gap-4 mb-8">
+        {lastThreeFirebaseImages.map((item) => (
           <HorizontalImageBox
             key={item.id}
             image={item.image}
@@ -152,9 +129,6 @@ const LocationAttractions = () => {
             link={item.link}
           />
         ))}
-      </div>
-
-
       </div>
     </div>
   );
