@@ -5,10 +5,17 @@ import HorizontalImageBox from "../components/locationAttractionComponents/Horiz
 import TrendingContent from "../components/locationAttractionComponents/TrendingContent";
 import useFirebaseStorage from "../hooks/useFireBaseStorage";
 
-// Array of titles for the last three images
+// Titles for the last three images to be displayed in a separate section
 const HorizontalTitleImages = ["Things to Do", "Events This Weekend", "Free Things to Do"];
 
-// Mapping image URLs to custom names (you can expand this as needed)
+const GridContainerTitles = [
+  "Popular Attractions",
+  "Hidden Gems",
+  "Must-See Landmarks",
+  "Top-Rated Activities"
+];
+
+// Mapping image URLs to custom names
 const imageNameMapping = {
   "bora_01.jpg": "Beautiful Bora Beach",
   "bora_02.jpg": "Stunning Sunset",
@@ -23,33 +30,43 @@ const imageNameMapping = {
 };
 
 const LocationAttractions = () => {
+  // Hook to fetch images from Firebase Storage for the "Bora Travel" directory
   const firebaseImages = useFirebaseStorage("Bora Travel");
 
-  // Extract and format the last three images from Firebase
+  // Get the last three images from the fetched images and format them with titles and links
   const lastThreeFirebaseImages = firebaseImages.slice(-3).map((url, index) => {
-    const imagePath = decodeURIComponent(url.split("/").pop().split("?")[0]);
-    const imageName = HorizontalTitleImages[index] || `Image ${index + 1}`; // Assign titles from the HorizontalTitleImages array
+    const imagePath = decodeURIComponent(url.split("/").pop().split("?")[0]); // Decode the image path to get the filename
+    const imageName = HorizontalTitleImages[index] || `Image ${index + 1}`; // Assign a title from the HorizontalTitleImages array
 
     return {
-      id: index + 1,
-      title: imageName,
-      image: url,
-      link: "#",
+      id: index + 1, // Unique ID for each image
+      title: imageName, // Title for the image
+      image: url, // URL of the image
+      link: "#", // Placeholder link
     };
   });
 
+  // Slice the firebaseImages to get only the first six images
+  const firstSixFirebaseImages = firebaseImages.slice(0, 6);
+
+  // Divide the six images into two groups of three images each
+  const firstThreeImages = firstSixFirebaseImages.slice(0, 3);
+  const nextThreeImages = firstSixFirebaseImages.slice(3, 6);
+
   return (
     <div className="p-8 bg-gray-100 dark:bg-gray-800">
+      {/* Main title for the page */}
       <h1 className="text-4xl font-bold text-blue-900 dark:text-blue-300 p-4 mb-6">
         Location Attractions
       </h1>
 
+      {/* Featured attraction section */}
       <div className="md:flex group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
         <div className="md:flex-shrink-0 overflow-hidden">
           <img
             className="w-full h-64 object-cover md:h-full transition-transform transform duration-300 ease-in-out group-hover:scale-105"
             src="https://craftypixels.com/placeholder-image/435x287/3048bf/8f8f8f&text=Bora"
-            alt="Attraction"
+            alt="Attraction" // Placeholder image and text
           />
         </div>
         <div className="p-8 flex flex-col justify-center">
@@ -86,6 +103,7 @@ const LocationAttractions = () => {
         </div>
       </div>
 
+      {/* Description section */}
       <div className="mt-8">
         <p className="text-gray-600 dark:text-gray-300">
           Regardless of your interests, InterContinental Bora Bora Le Moana
@@ -98,40 +116,46 @@ const LocationAttractions = () => {
         </p>
       </div>
 
-      <div className="mt-8">
-        <GridContainer>
-          {firebaseImages.map((url, index) => {
-            const imagePath = decodeURIComponent(
-              url.split("/").pop().split("?")[0]
-            );
-            const imageName =
-              imageNameMapping[imagePath] || `Image ${index + 1}`;
+      {/* Grid container for attraction cards */}
+      {GridContainerTitles.slice(0, 2).map((title, gridIndex) => {
+        const imagesToShow = gridIndex === 0 ? firstThreeImages : nextThreeImages;
+        return (
+          <div className="mt-8" key={gridIndex}>
+            <GridContainer title={title}>
+              {imagesToShow.map((url, index) => {
+                const imagePath = decodeURIComponent(url.split("/").pop().split("?")[0]);
+                const defaultImageName = `Attraction Image ${index + 1}`; // Define a default name
+                const imageName = imageNameMapping[imagePath] || defaultImageName; // Use the default name if no mapping is found
 
-            return (
-              <AttractionCard
-                key={index}
-                image={url}
-                title={imageName}
-                location="Bora Travel"
-                link="#"
-              />
-            );
-          })}
-        </GridContainer>
-      </div>
+                return (
+                  <AttractionCard
+                    key={index} // Unique key for each card
+                    image={url} // URL for the image
+                    title={imageName} // Title for the card
+                    location="Bora Travel" // Placeholder location
+                    link="#" // Placeholder link
+                  />
+                );
+              })}
+            </GridContainer>
+          </div>
+        );
+      })}
 
       {/* Separate Section for Last Three Images */}
       <div className="mt-8 flex justify-between gap-4 mb-8">
         {lastThreeFirebaseImages.map((item) => (
           <HorizontalImageBox
-            key={item.id}
-            image={item.image}
-            title={item.title}
-            link={item.link}
+            key={item.id} // Unique key for each image box
+            image={item.image} // Image URL
+            title={item.title} // Title for the image
+            link={item.link} // Link for the image
           />
         ))}
       </div>
-      <TrendingContent/>
+
+      {/* Trending Content Section */}
+      <TrendingContent />
     </div>
   );
 };
