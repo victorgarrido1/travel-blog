@@ -2,6 +2,7 @@ import React from "react";
 import AttractionCard from "../components/locationAttractionComponents/AttractionCard";
 import GridContainer from "../components/locationAttractionComponents/GridContainer";
 import HorizontalImageBox from "../components/locationAttractionComponents/HorizontalImageBox";
+import TrendingContent from "../components/locationAttractionComponents/TrendingContent";
 import useFirebaseStorage from "../hooks/useFireBaseStorage";
 
 // Array of titles for the last three images
@@ -130,6 +131,7 @@ const LocationAttractions = () => {
           />
         ))}
       </div>
+      <TrendingContent/>
     </div>
   );
 };
