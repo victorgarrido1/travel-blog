@@ -17,7 +17,10 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-end md:justify-end">
-          <a href="https://www.facebook.com" className="ml-4 md:ml-4 text-reset">
+          <a
+            href="https://www.facebook.com"
+            className="ml-4 md:ml-4 text-reset"
+          >
             <MDBIcon fab icon="facebook-f" />
           </a>
           <a href="https://www.x.com" className="ml-4 md:ml-4 text-reset">
@@ -26,10 +29,16 @@ const Footer = () => {
           <a href="https://www.google.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="google" />
           </a>
-          <a href="https://www.instagram.com" className="ml-4 md:ml-4 text-reset">
+          <a
+            href="https://www.instagram.com"
+            className="ml-4 md:ml-4 text-reset"
+          >
             <MDBIcon fab icon="instagram" />
           </a>
-          <a href="https://www.linkedin.com" className="ml-4 md:ml-4 text-reset">
+          <a
+            href="https://www.linkedin.com"
+            className="ml-4 md:ml-4 text-reset"
+          >
             <MDBIcon fab icon="linkedin" />
           </a>
           <a href="https://www.github.com" className="ml-4 md:ml-4 text-reset">
@@ -45,7 +54,10 @@ const Footer = () => {
             {/* Company Info Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
               <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300 flex items-center">
-                <MDBIcon icon="gem" className="mr-2 text-blue-900 dark:text-blue-300" />
+                <MDBIcon
+                  icon="gem"
+                  className="mr-2 text-blue-900 dark:text-blue-300"
+                />
                 Travel Lit Lounge
               </h6>
               <p>
@@ -61,23 +73,23 @@ const Footer = () => {
               <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
                 Products
               </h6>
-              <p>
-                <Link to="/travel/vacation-packages" className="text-reset">
+              <p className="mb-1">
+                <Link to="/travel/vacation-packages" className="text-gray-900 hover:underline dark:text-gray-100">
                   Vacation Packages
                 </Link>
               </p>
-              <p>
-                <Link to="/travel/location-attractions" className="text-reset">
+              <p className="mb-1">
+                <Link to="/travel/location-attractions" className="text-gray-900 hover:underline dark:text-gray-100">
                   Location Attractions
                 </Link>
               </p>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <Link to="/travel/clothing" className="text-gray-900 hover:underline dark:text-gray-100">
                   Clothing
-                </a>
+                </Link>
               </p>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
                   Books
                 </a>
               </p>
@@ -88,23 +100,23 @@ const Footer = () => {
               <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
                 Useful links
               </h6>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
                   Pricing
                 </a>
               </p>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
                   Settings
                 </a>
               </p>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
                   Orders
                 </a>
               </p>
-              <p>
-                <a href="#!" className="text-reset">
+              <p className="mb-1">
+                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
                   Help
                 </a>
               </p>
@@ -134,7 +146,10 @@ const Footer = () => {
         </MDBContainer>
       </section>
 
-      <div className="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+      <div
+        className="text-center p-4"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+      >
         © 2024 Copyright
         <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
           Travel Lit Lounge LLC

@@ -11,7 +11,7 @@ import Footer from './components/home/footer';
 import FabComponent from './components/fabComponet';
 import VacationPackages from './pages/vacationPackages';
 import LocationAttractions from './pages/LocationAttraction';
-import ImageGallery from './components/ImageGallery';
+import ClothingPage from './pages/Clothing';
 import 'react-tiny-fab/dist/styles.css';
 import 'mdb-react-ui-kit';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -54,6 +54,7 @@ const App = () => {
           <Route path="/travel/delete/:id" element={<DeleteLocation />} />
           <Route path='/travel/vacation-packages' element={<VacationPackages />} /> 
           <Route path="/travel/location-attractions" element={<LocationAttractions />} /> 
+          <Route path="travel/clothing" element={<ClothingPage />} />
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
