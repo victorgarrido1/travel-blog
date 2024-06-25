@@ -29,6 +29,25 @@ const imageNameMapping = {
   // Add more mappings as needed
 };
 
+// Default names array
+const defaultNames = [
+  "Beautiful Bora Beach",
+  "Stunning Sunset",
+  "Crystal Clear Waters",
+  "Luxurious Resort",
+  "Tropical Paradise",
+  "Serene Nature"
+];
+
+// Default locations array with travel agency information
+const defaultLocations = [
+  "Bora Adventures (Travel Lit Provided)",
+  "Bora Adventures (Travel Lit Provided)",
+  "Bora Adventures (Travel Lit Provided)",
+  "Bora Adventures (Travel Lit Provided)",
+  "Bora Adventures (Travel Lit Provided)"
+];
+
 const LocationAttractions = () => {
   // Hook to fetch images from Firebase Storage for the "Bora Travel" directory
   const firebaseImages = useFirebaseStorage("Bora Travel");
@@ -124,15 +143,16 @@ const LocationAttractions = () => {
             <GridContainer title={title}>
               {imagesToShow.map((url, index) => {
                 const imagePath = decodeURIComponent(url.split("/").pop().split("?")[0]);
-                const defaultImageName = `Attraction Image ${index + 1}`; // Define a default name
-                const imageName = imageNameMapping[imagePath] || defaultImageName; // Use the default name if no mapping is found
+                const defaultIndex = gridIndex * 3 + index; // Calculate the correct index for the defaultNames array
+                const imageName = imageNameMapping[imagePath] || defaultNames[defaultIndex] || `Default Image ${defaultIndex + 1}`; // Use the default name from array
+                const location = defaultLocations[defaultIndex] || `Default Location ${defaultIndex + 1}`; // Use the default location from array
 
                 return (
                   <AttractionCard
                     key={index} // Unique key for each card
                     image={url} // URL for the image
                     title={imageName} // Title for the card
-                    location="Bora Travel" // Placeholder location
+                    location={location} // Location for the card
                     link="#" // Placeholder link
                   />
                 );

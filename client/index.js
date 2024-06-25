@@ -41,7 +41,9 @@ app.get('/', (req, res) => {
 app.use('/travel', travelRoutes);
 
 // Connect to MongoDB
-mongoose.connect(mongoDB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoDB_URL, { 
+
+})
     .then(() => console.log("MongoDB connected successfully"))
     .catch(err => console.log("Error connecting to MongoDB:", err));
 

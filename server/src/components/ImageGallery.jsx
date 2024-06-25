@@ -3,16 +3,7 @@
 import React from 'react';
 import useFirebaseStorage from '../hooks/useFireBaseStorage';
 
-const imageNameMapping = {
-    'Bora Travel/bora_01.jpg': 'Beautiful Bora Beach',
-    'Bora Travel/bora_02.jpg': 'Stunning Sunset',
-    'Bora Travel/bora_03.webp': 'Crystal Clear Waters',
-    'Bora Travel/bora_04.jpg': 'Luxurious Resort',
-    'Bora Travel/bora_05.jpg': 'Tropical Paradise',
-    'Bora Travel/bora_06.jpg': 'Serene Nature',
-    // Add more mappings here
-  };
-  
+
   const ImageGallery = ({ storagePath }) => {
     const files = useFirebaseStorage(storagePath); // Use the custom hook
   
