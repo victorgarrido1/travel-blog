@@ -21,6 +21,8 @@ const ClothingPage = () => {
           Discover the ultimate shopping experience in Bora Bora, where you can find the latest fashion apparel and accessories from renowned designers like Tommy Bahama, Alice + Olivia, Michael Kors, Tory Burch, and Rebecca Minkoff. Elevate your style with exquisite jewelry selections from David Yurman, Tiffany & Co., Cartier, and more! Whether you're treating yourself or searching for the perfect gift for someone special, let the boutique shops of Bora Bora be your first stop for must-have styles and timeless elegance, no matter the season. Indulge in the luxurious shopping options that make Bora Bora a fashion paradise.
         </p>
       </div>
+      <hr className="border-t-2 border-gray-300 dark:border-gray-600 w-11/12 mx-auto my-5" />
+
     </div>
   );
 };

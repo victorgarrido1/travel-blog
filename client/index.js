@@ -5,6 +5,7 @@ import errorhandler from 'errorhandler';
 import cors from 'cors';
 import { PORT, mongoDB_URL } from './config.js';
 import travelRoutes from './routes/travelroutes.js';
+import shopRoutes from './routes/shopRoutes.js';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -22,15 +23,6 @@ app.use(express.json());
 // Allow all origins with default CORS settings
 app.use(cors());
 
-// You can configure CORS more specifically if needed
-/*
-app.use(cors({ 
-    origin: 'http://localhost:5554',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
-}));
-*/
-
 // Sample route to check if the server is running
 app.get('/', (req, res) => {
     console.log("Received GET request at /");
@@ -39,6 +31,9 @@ app.get('/', (req, res) => {
 
 // Use the travel routes with the /travel prefix
 app.use('/travel', travelRoutes);
+
+// Use the shop routes with the /shop prefix
+app.use('/shop', shopRoutes);
 
 // Connect to MongoDB
 mongoose.connect(mongoDB_URL, { 
