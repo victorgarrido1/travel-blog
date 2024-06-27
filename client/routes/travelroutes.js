@@ -84,22 +84,21 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-//route to be able to update a location 
+//route to be able to update a location
 router.put("/:id", async (req, res) => {
   try {
-    const { id } = req.params 
+    const { id } = req.params;
     const updatedLocation = await Location.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });
     if (!updatedLocation) {
       return res.status(404).send("Location not found");
-    } 
+    }
     res.status(200).send(updatedLocation); //this is in charge of updating the res
-
   } catch (err) {
     res.status(500).send(err.message);
   }
-})
+});
 
 export default router;
