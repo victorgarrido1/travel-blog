@@ -20,31 +20,31 @@ router.post('/add-sample-items', async (req, res) => {
       name: 'Tropical Shirt',
       price: 29.99,
       inStock: true,
-      image: 'https://postimg.cc/xkbRDvW1'
+      image: 'https://i.postimg.cc/rynGTcJS/teeshirt.jpg'
     },
     {
       name: 'Beach Sandals',
       price: 19.99,
       inStock: true,
-      image: 'https://postimg.cc/bZ3tKJyr'
+      image: 'https://i.postimg.cc/TwHctXNq/beachsandles.jpg'
     },
     {
       name: 'Sun Hat',
       price: 15.49,
       inStock: false,
-      image: 'https://postimg.cc/2LQqTj9z'
+      image: 'https://i.postimg.cc/k5mKs5Jd/sunhat.jpg'
     },
     {
       name: 'Sunglasses',
       price: 49.99,
       inStock: true,
-      image: 'https://postimg.cc/2LQqTj9z'
+      image: 'https://i.postimg.cc/Z5FCTxS1/sunglasses.jpg'
     },
     {
       name: 'Swim Trunks',
       price: 24.99,
       inStock: true,
-      image: 'https://postimg.cc/zytyxc7R'
+      image: 'https://i.postimg.cc/449VhMRc/trunks.jpg'
     },
   ];
 

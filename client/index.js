@@ -36,7 +36,7 @@ app.use('/travel', travelRoutes);
 app.use('/shop', shopRoutes);
 
 // Connect to MongoDB
-mongoose.connect(mongoDB_URL, { 
+mongoose.connect(mongoDB_URL, {
 
 })
     .then(() => console.log("MongoDB connected successfully"))
