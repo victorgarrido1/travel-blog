@@ -3,10 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../components/backbutton";
 import Spinner from "../components/spinner"; // Assuming Spinner is a custom component
-import { useSnackbar } from 'notistack';
+import { useSnackbar } from "notistack";
 
 const CreateLocation = () => {
-  const [name, setName] = useState ("");
+  const [name, setName] = useState("");
   const [locationName, setLocationName] = useState("");
   const [summary, setSummary] = useState("");
   const [userNotes, setUserNotes] = useState("");
@@ -15,13 +15,12 @@ const CreateLocation = () => {
   const [loading, setLoading] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
-  
 
   const handleSaveLocation = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
     const data = {
-        name,
+      name,
       locationName,
       summary,
       userNotes,
@@ -34,12 +33,14 @@ const CreateLocation = () => {
       .post("http://localhost:5554/travel/add", data)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar("Location Created Successfully ", {variant: 'Success' });
+        enqueueSnackbar("Location Created Successfully ", {
+          variant: "Success",
+        });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        enqueueSnackbar('Error', { variant: 'Error' });
+        enqueueSnackbar("Error", { variant: "Error" });
         console.error(err);
       });
   };
@@ -51,7 +52,7 @@ const CreateLocation = () => {
       {loading && <Spinner />} {/* Show spinner if loading */}
       <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
         <form onSubmit={handleSaveLocation}>
-        <div className="my-4">
+          <div className="my-4">
             <label className="text-xl mr-4 text-gray-500">ONLY Name</label>
             <input
               type="text"
@@ -63,7 +64,7 @@ const CreateLocation = () => {
           </div>
           <div className="my-4">
             <label className="text-xl mr-4 text-gray-500">Location Name</label>
-            
+
             <input
               type="text"
               value={locationName}
@@ -72,7 +73,7 @@ const CreateLocation = () => {
               required
             />
           </div>
-          
+
           <div className="my-4">
             <label className="text-xl mr-4 text-gray-500">Summary</label>
             <input
@@ -104,7 +105,9 @@ const CreateLocation = () => {
             />
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Space Room Info</label>
+            <label className="text-xl mr-4 text-gray-500">
+              Space Room Info
+            </label>
             <input
               type="text"
               value={spaceRoomInfo}
@@ -113,7 +116,6 @@ const CreateLocation = () => {
               required
             />
           </div>
-          
 
           <button
             type="submit"

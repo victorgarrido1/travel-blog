@@ -74,25 +74,40 @@ const Footer = () => {
                 Products
               </h6>
               <p className="mb-1">
-                <Link to="/travel/vacation-packages" className="text-gray-900 hover:underline dark:text-gray-100">
+                <Link
+                  to="/travel/vacation-packages"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Vacation Packages
                 </Link>
               </p>
               <p className="mb-1">
-                <Link to="/travel/location-attractions" className="text-gray-900 hover:underline dark:text-gray-100">
+                <Link
+                  to="/travel/location-attractions"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Location Attractions
                 </Link>
               </p>
               <p className="mb-1">
-                <Link to="/travel/clothing" className="text-gray-900 hover:underline dark:text-gray-100">
+                <Link
+                  to="/travel/clothing"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Clothing
                 </Link>
               </p>
               <p className="mb-1">
-                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
+                <Link
+                  to="/travel/books"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Books
-                </a>
+                </Link>
               </p>
+
+              {/* Link to "/travel/books" className="text-gray-900 hover:underline dark:text-gray-100">
+               */}
             </MDBCol>
 
             {/* Useful Links Section */}
@@ -101,22 +116,34 @@ const Footer = () => {
                 Useful links
               </h6>
               <p className="mb-1">
-                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
+                <a
+                  href="#!"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Pricing
                 </a>
               </p>
               <p className="mb-1">
-                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
+                <a
+                  href="#!"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Settings
                 </a>
               </p>
               <p className="mb-1">
-                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
+                <a
+                  href="#!"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Orders
                 </a>
               </p>
               <p className="mb-1">
-                <a href="#!" className="text-gray-900 hover:underline dark:text-gray-100">
+                <a
+                  href="#!"
+                  className="text-gray-900 hover:underline dark:text-gray-100"
+                >
                   Help
                 </a>
               </p>

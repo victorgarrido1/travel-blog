@@ -10,7 +10,6 @@ import LocationTable from "../components/home/locationTable"; // Component to di
 import LocationCard from "../components/home/locationCard"; // Component to display locations in a card format
 import Footer from "../components/home/footer"; // to put in the bottom (:
 
-
 const Home = () => {
   // State for storing locations data
   const [locations, setLocations] = useState([]);
@@ -68,12 +67,10 @@ const Home = () => {
       {/* Conditional rendering: Show spinner if loading, else show either table or card view */}
       {loading ? (
         <Spinner />
+      ) : showType === "table" ? (
+        <LocationTable locations={locations} />
       ) : (
-        showType === "table" ? (
-          <LocationTable locations={locations} />
-        ) : (
-          <LocationCard locations={locations} />
-        )
+        <LocationCard locations={locations} />
       )}
     </div>
   );
