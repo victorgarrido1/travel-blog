@@ -7,8 +7,8 @@ const BookList = () => {
     useEffect(() => {
         const fetchBooks = async () => {
             try {
-                const response = await axios.get('/api/books');
-                console.log(response.data); // Add this line to debug the fetched data
+                const response = await axios.get('/book/books');
+                console.log('Fetched data:', response.data); // Log the fetched data for debugging
                 setBooks(response.data);
             } catch (error) {
                 console.error('Error fetching books:', error);
@@ -18,23 +18,25 @@ const BookList = () => {
         fetchBooks();
     }, []);
 
-    if (!Array.isArray(books)) {
-        return <div>Error: Data fetched is not an array</div>;
-    }
+    console.log('Books state:', books); // Log the state to see its value during rendering
 
     return (
         <div>
             <h1>Books</h1>
-            <ul>
-                {books.map(book => (
-                    <li key={book._id}>
-                        <h2>{book.title}</h2>
-                        <p>Author: {book.author}</p>
-                        <img src={book.cover} alt={`${book.title} cover`} />
-                        <p>Category: {book.category}</p>
-                    </li>
-                ))}
-            </ul>
+            {Array.isArray(books) && books.length > 0 ? (
+                <ul>
+                    {books.map(book => (
+                        <li key={book._id}>
+                            <h2>{book.title}</h2>
+                            <p>Author: {book.author}</p>
+                            <img src={book.cover} alt={`${book.title} cover`} />
+                            <p>Category: {book.category}</p>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>No books available</p>
+            )}
         </div>
     );
 };

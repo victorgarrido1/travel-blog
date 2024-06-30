@@ -17,7 +17,7 @@ import BookPage from "./pages/BookPage";
 import "react-tiny-fab/dist/styles.css";
 import "mdb-react-ui-kit";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./fonts.css"; // Import the custom font
+import "./fonts.css";
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -37,15 +37,10 @@ const App = () => {
   };
 
   return (
-    <div
-      className={`flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white`}
-    >
+    <div className={`flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white`}>
       <header className="p-4 flex justify-between items-center">
         <Link to="/">
-          <h1
-            className="text-3xl"
-            style={{ fontFamily: "Josefin Sans, sans-serif" }}
-          >
+          <h1 className="text-3xl" style={{ fontFamily: "Josefin Sans, sans-serif" }}>
             Travel Lit Lounge
           </h1>
         </Link>
@@ -70,19 +65,10 @@ const App = () => {
           <Route path="/travel/details/:id" element={<ShowLocation />} />
           <Route path="/travel/edit/:id" element={<EditLocation />} />
           <Route path="/travel/delete/:id" element={<DeleteLocation />} />
-          <Route
-            path="/travel/vacation-packages"
-            element={<VacationPackages />}
-          />
-          <Route
-            path="/travel/location-attractions"
-            element={<LocationAttractions />}
-          />
-          <Route
-            path="/travel/clothing"
-            element={<ClothingPage setCart={setCart} />}
-          />
-          <Route path="travel/books" element={<BookPage />} />
+          <Route path="/travel/vacation-packages" element={<VacationPackages />} />
+          <Route path="/travel/location-attractions" element={<LocationAttractions />} />
+          <Route path="/travel/clothing" element={<ClothingPage setCart={setCart} />} />
+          <Route path="/travel/books" element={<BookPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <FabComponent />
