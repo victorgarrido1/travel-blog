@@ -7,4 +7,11 @@ export default defineConfig({
   define: {
     global: 'window', // this will define global as window in browser
   },
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: `@import "slick-carousel/slick/slick.css"; @import "slick-carousel/slick/slick-theme.css";`
+      },
+    },
+  },
 });

@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class', // Enable dark mode
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"], // Specify content paths
   theme: {
     extend: {
       colors: {
         'deep-charcoal': '#121212',
+        'custom-rgb': 'rgb(123, 137, 232)', // Add the custom RGB color
       },
       animation: {
         fade: "fadeIn .5s ease-in-out",

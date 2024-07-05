@@ -1,3 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Customize the slick dots */
+.slick-dots li button:before {
+  @apply text-white; /* Apply Tailwind text color utility */
+  font-size: 12px;
+  display: block; /* Ensure the dots are displayed as block elements */
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-white; /* Apply Tailwind text color utility for active dots */
+}
+
+/* Dark mode customization */
+.dark .slick-dots li button:before {
+  @apply text-white; /* Dot color in dark mode */
+  display: block; /* Ensure the dots are displayed as block elements */
+}
+
+.dark .slick-dots li.slick-active button:before {
+  @apply text-white; /* Active dot color in dark mode */
+}

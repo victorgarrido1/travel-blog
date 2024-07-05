@@ -7,6 +7,7 @@ import { PORT, mongoDB_URL } from './config.js';
 import travelRoutes from './routes/travelRoutes.js';
 import shopRoutes from './routes/shopRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';  // Import book routes
+import TropicalBookRoutes from './routes/TropicalBookRoutes.js';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -40,6 +41,8 @@ app.use('/shop', shopRoutes);
 
 // Use the book routes with the /book prefix
 app.use('/book', bookRoutes);  // Use /book prefix
+
+app.use('/tropical-book', TropicalBookRoutes);
 
 // Connect to MongoDB
 mongoose
