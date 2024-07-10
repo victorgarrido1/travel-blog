@@ -1,4 +1,4 @@
-// Importing necessary modules and components from React, axios, and other libraries
+// home.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios"; // For making HTTP requests
 import Spinner from "../components/spinner"; // A spinner component for loading state
@@ -18,14 +18,18 @@ const Home = () => {
   // State for toggling between table and card view
   const [showType, setShowType] = useState("table");
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log('API URL:', apiUrl);
+
   // useEffect hook to fetch data when the component mounts
   useEffect(() => {
     // Set loading to true while data is being fetched
     setLoading(true);
     // Make a GET request to fetch locations data
     axios
-      .get("http://localhost:5554/travel")
+      .get(`${apiUrl}/travel`)
       .then((response) => {
+        console.log(response);
         // Set the locations data in state
         setLocations(response.data.data);
         // Set loading to false after data is fetched
@@ -37,7 +41,7 @@ const Home = () => {
         // Set loading to false if an error occurs
         setLoading(false);
       });
-  }, []); // Empty dependency array means this useEffect runs once when component mounts
+  }, [apiUrl]); // Add apiUrl as a dependency
 
   return (
     <div className="p-4">

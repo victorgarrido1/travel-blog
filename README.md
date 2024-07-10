@@ -56,9 +56,12 @@ npm start
 * Node.JS
 * HTML 5
 * TailwindCSS
+* FontAwesome
 * MongoDB
 * Mongoose
  * Vite
+ * Firebase
+ * Robot text files
 
 
 ## Project struggles

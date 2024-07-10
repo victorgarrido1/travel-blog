@@ -12,6 +12,11 @@ import TropicalBookRoutes from './routes/TropicalBookRoutes.js';
 // Load environment variables from .env file
 dotenv.config();
 
+console.log('Environment Variables:');
+console.log('MONGODB_URL:', process.env.MONGODB_URL);
+console.log('PORT:', process.env.PORT);
+console.log('NODE_ENV:', process.env.NODE_ENV);
+
 const app = express();
 
 // Use error handling middleware only in development mode
@@ -22,10 +27,16 @@ if (process.env.NODE_ENV === 'development') {
 // Middleware for parsing the request body as JSON
 app.use(express.json());
 
+// Set CORS options
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'development'
+    ? 'http://localhost:5554'  // Allow your local frontend's origin for development
+    : 'https://travel-lit-lounge-project.netlify.app',  // Allow your production frontend's origin
+  optionsSuccessStatus: 200
+};
+
 // Allow all origins with default CORS settings
-app.use(cors({
-  origin: 'http://localhost:5173'  // Allow your frontend's origin
-}));
+app.use(cors(corsOptions));
 
 // Sample route to check if the server is running
 app.get('/', (req, res) => {
@@ -40,8 +51,9 @@ app.use('/travel', travelRoutes);
 app.use('/shop', shopRoutes);
 
 // Use the book routes with the /book prefix
-app.use('/book', bookRoutes);  // Use /book prefix
+app.use('/book', bookRoutes);
 
+// Use the tropical book routes with the /tropical-book prefix
 app.use('/tropical-book', TropicalBookRoutes);
 
 // Connect to MongoDB
@@ -49,7 +61,6 @@ mongoose
   .connect(mongoDB_URL)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => console.log('Error connecting to MongoDB:', err));
-
 
 // Start the server
 app.listen(PORT, () => {

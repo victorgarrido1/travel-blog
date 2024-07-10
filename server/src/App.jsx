@@ -19,6 +19,8 @@ import "mdb-react-ui-kit";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./fonts.css";
 
+
+
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [cart, setCart] = useState([]);
