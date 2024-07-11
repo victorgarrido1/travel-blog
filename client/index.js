@@ -62,17 +62,17 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to the Stack of WorkPlace");
 });
 
-// Use the travel routes with the /travel prefix
-app.use("/travel", travelRoutes);
+// Use the travel routes with the /api/travel prefix
+app.use("/api/travel", travelRoutes);
 
-// Use the shop routes with the /shop prefix
-app.use("/shop", shopRoutes);
+// Use the shop routes with the /api/shop prefix
+app.use("/api/shop", shopRoutes);
 
-// Use the book routes with the /book prefix
-app.use("/book", bookRoutes);
+// Use the book routes with the /api/book prefix
+app.use("/api/book", bookRoutes);
 
-// Use the tropical book routes with the /tropical-book prefix
-app.use("/tropical-book", TropicalBookRoutes);
+// Use the tropical book routes with the /api/tropical-book prefix
+app.use("/api/tropical-book", TropicalBookRoutes);
 
 // Connect to MongoDB
 mongoose
