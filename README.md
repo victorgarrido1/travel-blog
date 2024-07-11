@@ -1,12 +1,23 @@
-# Online Travel Bog Project
+# Online Travel Blog Project
 
 
 ## About the Project
 This application allows you to see blog content across many multiple users and you can be able view travel locations routes and see user generated content relating to a particular location post based on the users submissions. This application is great to be able to share many options similar to viewing options such like as in a simple blog site.
 
+## Deployed Link 
+https://travel-blog-ten-tan.vercel.app/
+
 ### Screenshot of the application
 
-![travel_blog_ver1](https://github.com/victorgarrido1/travel-blog/assets/139294878/d108647a-7ea2-4078-9502-baf2a880cd1b)
+![travel_lit_image_01_version](https://github.com/victorgarrido1/travel-blog/assets/139294878/25573afb-fa2d-4b22-b726-f4335bc106f1)
+
+Demononstation Gif
+ ### Video One
+![t_llgif_sc_01](https://github.com/victorgarrido1/travel-blog/assets/139294878/52c23c10-1b0b-41fe-8a2c-499bcd458b65)
+
+### Video Two
+![edit_gif_version_01 (1)](https://github.com/victorgarrido1/travel-blog/assets/139294878/ad3de2f5-d6ff-4a3b-97e0-67fbba3a1a37)
+
 
 ## Prerequisites
 
@@ -59,13 +70,18 @@ npm start
 * FontAwesome
 * MongoDB
 * Mongoose
- * Vite
- * Firebase
- * Robot text files
+* Vite
+* Firebase
+* Robot text files
 
 
-## Project struggles
+## Project Struggles
 With this project, I would like to share my fair share of personal struggles. Using React Router to get the appropriate routes to function properly was quite challenging. I did my best to revisit the examples given to me for practice, and after several attempts, I realized that understanding the proper use of endpoints is something that takes time to master in the long run. I hope to be given more opportunities to work on other tasks to better understand web development routes.
 
-Questions
+
+##  Project Updates
+As I continue to expand this project, I encounter new challenges that allow me to implement new pieces of technology, which will be documented in this README as they are implemented. These are my first encountered problems, and I am attempting to find solutions using as many resources and external sources as possible.
+
+ 
+ ## Questions
 If you have any questions relating to this project, please reach out to me here or via email at: vgarrido009@gmail.com
