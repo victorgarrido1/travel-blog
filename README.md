@@ -5,8 +5,7 @@
 This application allows you to see blog content across many multiple users and you can be able view travel locations routes and see user generated content relating to a particular location post based on the users submissions. This application is great to be able to share many options similar to viewing options such like as in a simple blog site.
 
 ## Deployed Link 
-https://travel-blog-ten-tan.vercel.app/
-
+https://travel-blog-beta-rouge.vercel.app/
 ### Screenshot of the application
 
 ![travel_lit_image_01_version](https://github.com/victorgarrido1/travel-blog/assets/139294878/25573afb-fa2d-4b22-b726-f4335bc106f1)
