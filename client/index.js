@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 app.use("/api/travel", travelRoutes);
 app.use("/api/shop", shopRoutes);
 app.use("/api/book", bookRoutes);
-app.use("/api/tropical-book", tropicalBookRoutes);
+app.use("/api/tropical-book", tropicalBookRoutes); // Use tropicalBookRoutes
 
 mongoose
   .connect(mongoDB_URL)
