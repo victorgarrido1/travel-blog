@@ -14,12 +14,11 @@ import LocationAttractions from "./pages/LocationAttraction";
 import ClothingPage from "./pages/Clothing";
 import ShoppingCart from "./pages/ShoppingCart";
 import BookPage from "./pages/BookPage";
+import PricingPage from "./pages/PricingPage"; // Make sure to create this page if it doesn't exist
 import "react-tiny-fab/dist/styles.css";
 import "mdb-react-ui-kit";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./fonts.css";
-
-
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -71,6 +70,7 @@ const App = () => {
           <Route path="/travel/location-attractions" element={<LocationAttractions />} />
           <Route path="/travel/clothing" element={<ClothingPage setCart={setCart} />} />
           <Route path="/travel/books" element={<BookPage />} />
+          <Route path="/travel/pricing" element={<PricingPage />} /> 
           <Route path="*" element={<NotFound />} />
         </Routes>
         <FabComponent />

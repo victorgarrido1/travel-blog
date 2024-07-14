@@ -116,12 +116,12 @@ const Footer = () => {
                 Useful links
               </h6>
               <p className="mb-1">
-                <a
-                  href="#!"
+                <Link
+                  to="/travel/pricing"
                   className="text-gray-900 hover:underline dark:text-gray-100"
                 >
                   Pricing
-                </a>
+                </Link>
               </p>
               <p className="mb-1">
                 <a
