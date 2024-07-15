@@ -112,12 +112,12 @@ const Footer = () => {
 
             {/* Useful Links Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
-              <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
+            <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
                 Useful links
               </h6>
               <p className="mb-1">
                 <Link
-                  to="/travel/pricing"
+                  to="/pricing"
                   className="text-gray-900 hover:underline dark:text-gray-100"
                 >
                   Pricing

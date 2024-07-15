@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import PricingCard from '../components/home/PricingComponent/pricingCard';
+import PricingControls from '../components/home/PricingComponent/pricingControls';
+import '../components/home/PricingComponent/PricingPage.css';
 
 const PricingPage = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -14,78 +17,67 @@ const PricingPage = () => {
 
   const pricingPlans = [
     {
-      name: "Suite Team",
-      monthly: 55,
-      annual: 660,
-      features: ["Ticketing system", "Email, chat, voice, social messaging, and more", "Help center", "AI agents"],
-      trial: "Free trial",
+      name: "Beachfront Villa",
+      monthly: 500,
+      annual: 6000,
+      features: ["Ocean view", "Private beach access", "Complimentary breakfast", "Free Wi-Fi"],
+      trial: "Book Now",
     },
     {
-      name: "Suite Growth",
-      monthly: 89,
-      annual: 1068,
-      features: ["Ticketing system", "Email, chat, voice, social messaging, and more", "Help center", "AI agents"],
-      trial: "Free trial",
+      name: "Overwater Bungalow",
+      monthly: 750,
+      annual: 9000,
+      features: ["Direct lagoon access", "Glass floor panel", "Private terrace", "Free Wi-Fi"],
+      trial: "Book Now",
     },
     {
-      name: "Suite Professional",
-      monthly: 115,
-      annual: 1380,
-      features: ["Ticketing system", "Email, chat, voice, social messaging, and more", "Help center", "AI agents"],
-      trial: "Free trial",
+      name: "Luxury Suite",
+      monthly: 1000,
+      annual: 12000,
+      features: ["Private pool", "Butler service", "All-inclusive dining", "Free Wi-Fi"],
+      trial: "Book Now",
     },
     {
-      name: "Suite Enterprise",
+      name: "Presidential Suite",
       monthly: "Contact us",
       annual: "Contact us",
-      features: ["Ticketing system", "Email, chat, voice, social messaging, and more", "Help center", "AI agents"],
-      trial: "Talk to Sales",
+      features: ["Private island", "Helicopter transfer", "Personal chef", "Free Wi-Fi"],
+      trial: "Contact Us",
     },
   ];
 
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex justify-center mb-6">
-        <div className="flex items-center space-x-4">
-          <span>Subscription term</span>
-          <button
-            onClick={toggleSubscriptionTerm}
-            className={`px-4 py-2 rounded-full ${isAnnual ? 'bg-green-500' : 'bg-gray-300'}`}
-          >
-            {isAnnual ? 'Annual' : 'Monthly'}
-          </button>
-          <span className="text-green-500">Save with annual</span>
-        </div>
-        <div className="ml-10 flex items-center space-x-4">
-          <span>Number of agents</span>
-          <input
-            type="number"
-            value={agents}
-            onChange={handleAgentsChange}
-            className="border rounded p-2 w-16"
-            min="1"
-          />
-        </div>
-      </div>
+    <div className="container mx-auto p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
+      <h1 style={{ fontFamily: 'Roboto, sans-serif', fontSize: '2rem', marginBottom: '1rem' }}>
+        Bora Bora International Travel Resort Plans
+      </h1>
+      <p style={{ fontFamily: 'Roboto, sans-serif', marginBottom: '1rem' }}>
+        Experience the ultimate luxury and comfort at Bora Bora International Travel Resort.
+        Choose the perfect plan that suits your needs and enjoy exclusive features and services.
+      </p>
+      <PricingControls
+        isAnnual={isAnnual}
+        toggleSubscriptionTerm={toggleSubscriptionTerm}
+        agents={agents}
+        handleAgentsChange={handleAgentsChange}
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {pricingPlans.map((plan, index) => (
-          <div key={index} className="border p-4 rounded-lg text-center">
-            <h3 className="text-xl font-bold">{plan.name}</h3>
-            <p className="text-2xl font-semibold mt-2">
-              {isAnnual ? `$${plan.annual * agents}/year for ${agents} agent${agents > 1 ? 's' : ''}` : `$${plan.monthly * agents}/month per agent`}
-            </p>
-            <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded">{plan.trial}</button>
-            <div className="mt-4 text-left">
-              {plan.features.map((feature, index) => (
-                <p key={index} className="flex items-center">
-                  <span className="mr-2 text-green-500">&#10003;</span>
-                  {feature}
-                </p>
-              ))}
-            </div>
-          </div>
+          <PricingCard
+            key={index}
+            plan={plan}
+            isAnnual={isAnnual}
+            agents={agents}
+            className={`border-r border-gray-300 dark:border-gray-600 ${index === pricingPlans.length - 1 ? 'border-r-0' : ''}`} // Add vertical border to all but the last card
+          />
         ))}
       </div>
+      <button
+        className="w-full mt-8 py-2 bg-green-500 text-white font-bold rounded"
+        style={{ fontFamily: 'Roboto, sans-serif' }}
+      >
+        See All Features
+      </button>
     </div>
   );
 };
