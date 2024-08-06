@@ -117,7 +117,7 @@ const Footer = () => {
               </h6>
               <p className="mb-1">
                 <Link
-                  to="/pricing"
+                  to="/travel/pricing"
                   className="text-gray-900 hover:underline dark:text-gray-100"
                 >
                   Pricing
@@ -125,10 +125,10 @@ const Footer = () => {
               </p>
               <p className="mb-1">
                 <a
-                  href="#!"
+                  href="/travel/mobile"
                   className="text-gray-900 hover:underline dark:text-gray-100"
                 >
-                  Settings
+                  Mobile
                 </a>
               </p>
               <p className="mb-1">
