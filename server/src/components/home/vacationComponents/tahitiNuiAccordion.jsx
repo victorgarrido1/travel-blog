@@ -28,6 +28,8 @@ const Tahiti = ({ title = "Air Tahiti Nui Includes", children }) => {
           }}
           className="overflow-hidden"
         >
+                  <hr className="border-t border-gray-300 dark:border-gray-600 w-11/12 mx-auto my-5" />
+
           <ul className="text-gray-800 dark:text-gray-100 mt-5 space-y-3">
             <li className="flex items-center">
               <i className="fa-solid fa-circle-check mr-2 text-green-500"></i>

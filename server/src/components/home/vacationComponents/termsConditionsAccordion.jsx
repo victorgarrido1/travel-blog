@@ -15,9 +15,8 @@ const TermsConditions = ({ title = "Terms & Conditions", children }) => {
       >
         {title}
         <i
-          className={`fa-solid transition-transform duration-300 ease-in-out ${
-            isVisible ? "fa-arrow-up" : "fa-arrow-down"
-          }`}
+          className={`fa-solid transition-transform duration-300 ease-in-out ${isVisible ? "fa-arrow-up" : "fa-arrow-down"
+            }`}
         ></i>
       </button>
       <div
@@ -27,6 +26,8 @@ const TermsConditions = ({ title = "Terms & Conditions", children }) => {
         }}
         className="overflow-hidden"
       >
+        <hr className="border-t border-gray-300 dark:border-gray-600 w-11/12 mx-auto my-5" />
+
         <ul className="text-gray-800 dark:text-gray-100 mt-5 space-y-3">
           {children || (
             <>

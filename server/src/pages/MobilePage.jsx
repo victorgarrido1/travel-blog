@@ -1,9 +1,13 @@
+// src/components/MobilePage.js
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import useFirebaseStorage from '../hooks/useFireBaseStorage';
 
 const MobilePage = () => {
+  const images = useFirebaseStorage('bora-travel-mobile'); // Use the custom hook to fetch images
+
   const settings = {
     dots: true,
     infinite: true,
@@ -23,15 +27,11 @@ const MobilePage = () => {
       </p>
       <div className="mx-auto max-w-md">
         <Slider {...settings}>
-          <div>
-            <img src="image1.jpg" alt="Feature 1" className="w-full h-auto" />
-          </div>
-          <div>
-            <img src="image2.jpg" alt="Feature 2" className="w-full h-auto" />
-          </div>
-          <div>
-            <img src="image3.jpg" alt="Feature 3" className="w-full h-auto" />
-          </div>
+          {images.map((url, index) => (
+            <div key={index}>
+              <img src={url} alt={`Feature ${index + 1}`} className="w-full h-auto" />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

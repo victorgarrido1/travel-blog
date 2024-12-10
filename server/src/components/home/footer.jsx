@@ -110,6 +110,7 @@ const Footer = () => {
                */}
             </MDBCol>
 
+
             {/* Useful Links Section */}
             <MDBCol className="mb-4 md:mb-0 text-left">
             <h6 className="uppercase font-bold mb-4 text-blue-900 dark:text-blue-300">
