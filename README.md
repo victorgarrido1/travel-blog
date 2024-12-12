@@ -83,6 +83,13 @@ With this project, I would like to share my fair share of personal struggles. Us
 ##  Project Updates
 As I continue to expand this project, I encounter new challenges that allow me to implement new pieces of technology, which will be documented in this README as they are implemented. These are my first encountered problems, and I am attempting to find solutions using as many resources and external sources as possible.
 
+
+
+## Project Layout Inspirations
+To help me build a reference, the web offers a vast amounts of examples that can be used. In the project example, I used the Costco Travel Website to provide me a template for some of the pages in this site.
+
+[Costco Bora Bora Vacation Packages](https://www.costcotravel.com/Vacation-Packages/Tahiti/Bora-Bora)
+
  
  ## Questions
 If you have any questions relating to this project, please reach out to me here or via email at: vgarrido009@gmail.com
