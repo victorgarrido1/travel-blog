@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir public",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "vercel-build": "vite build --outDir public"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
