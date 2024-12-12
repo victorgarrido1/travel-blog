@@ -44,6 +44,9 @@ const Footer = () => {
           <a href="https://www.github.com" className="ml-4 md:ml-4 text-reset">
             <MDBIcon fab icon="github" />
           </a>
+          <a href="https://www.discord.com" className="ml-4 md:ml-4 text-reset">
+            <MDBIcon fab icon="discord" />
+          </a>
         </div>
       </section>
 

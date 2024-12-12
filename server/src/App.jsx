@@ -21,19 +21,32 @@ import "mdb-react-ui-kit";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./fonts.css";
 
+// Importing necessary hooks from React
 const App = () => {
+  // Using the `useState` hook to manage two states:
+  // `theme` for dark/light mode and `cart` for shopping cart data
+  // The theme is initialized with the value stored in localStorage
+  // or defaults to "light" if no value is found.
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  // `cart` is another state initialized as an empty array, likely for managing shopping cart items
   const [cart, setCart] = useState([]);
 
+  // `useEffect` runs a side effect whenever the `theme` state changes
   useEffect(() => {
+    // Check if the theme is "dark"
     if (theme === "dark") {
+      // Add the "dark" class to the root HTML element for applying dark mode styles
       document.documentElement.classList.add("dark");
     } else {
+      // Remove the "dark" class from the root HTML element if the theme is not "dark"
       document.documentElement.classList.remove("dark");
     }
+    // Save the updated theme value in localStorage to persist user preference
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme]); // Dependency array ensures this runs only when `theme` changes
 
+  // A function to toggle the theme between "dark" and "light"
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -71,7 +84,7 @@ const App = () => {
           <Route path="/travel/location-attractions" element={<LocationAttractions />} />
           <Route path="/travel/clothing" element={<ClothingPage setCart={setCart} />} />
           <Route path="/travel/books" element={<BookPage />} />
-          <Route path="/travel/pricing" element={<PricingPage />} /> 
+          <Route path="/travel/pricing" element={<PricingPage />} />
           <Route path="/travel/mobile" element={<MobilePage />} />  // Add MobilePage route
           <Route path="*" element={<NotFound />} />
         </Routes>
